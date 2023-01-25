@@ -1,4 +1,4 @@
-class Answers {
+export class Answers {
     private variable: string;
     private value: string;
 

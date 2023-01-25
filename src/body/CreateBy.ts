@@ -1,4 +1,4 @@
-class CreateBy {
+export class CreateBy {
     private email: string;
 
     public getEmail(): string {

@@ -1,4 +1,4 @@
-export class Template {
+export class DocAsyncResponse {
     private token: string;
 
     public getToken(): string {
