@@ -1,34 +1,36 @@
-// import { DocFromPdf } from "../body/doc/DocFromPdf";
+import { DocFromPdf } from "../body/doc/DocFromPdf";
+import { HttpRequestFactory } from "../services/HttpRequestFactory";
+import { JsonConverter } from "../services/JsonConverter";
 
-// export class DocRequests {
-//     private apiRoute: string = "https://api.zapsign.com.br/api/v1/";
-//     // private JsonConverter jsonConverter = new JsonConverter();
-//     private jsonConverter: JSON;
-//     private apiToken: string;
+export default class DocRequests {
+    private apiRoute: string = "https://api.zapsign.com.br/api/v1/";
+    private jsonConverter: JsonConverter = new JsonConverter();
+    private apiToken: string = '';
 
-//     public DocRequests(apiToken: string) {
-//         this.apiToken = apiToken;
-//     }
+    public DocRequests(apiToken: string) {
+        this.apiToken = apiToken;
+    }
 
-//     public getTokenApi(): string {
-//         return this.apiToken;
-//     }
+    public getTokenApi(): string {
+        return this.apiToken;
+    }
 
-//     public setTokenApi(apiToken: string): void {
-//         this.apiToken = apiToken;
-//     }
+    public setTokenApi(apiToken: string): void {
+        this.apiToken = apiToken;
+    }
 
-//     public createDocFromUploadPdf(doc: DocFromPdf) {
-//         throw new Error();
+    public createDocFromUploadPdf(doc: DocFromPdf) {
+        // throw new Error();
 
-//         jsonDoc: string = this.jsonConverter.docFromPdfToJson(doc);
+        const jsonDoc: string = this.jsonConverter.docFromPdfToJson(doc);
 
-//         uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
+        const uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        // HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-//         return this.jsonConverter.jsonToDocResponse(response.body());
-//     }
+        // return this.jsonConverter.jsonToDocResponse(response.body());
+    }
 
 //     public DocResponse createDocFromUploadDocx(DocFromDocx doc) throws Exception {
 //         String jsonDoc = new JsonConverter().docFromDocxToJson(doc);
@@ -113,4 +115,4 @@
 
 //         return response.statusCode();
 //     }
-// }
+}

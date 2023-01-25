@@ -8,8 +8,8 @@ export class HttpRequestFactory {
             'headers': {}
           };
 
-          this.request(options, function (error, response) {
-            this.exceptionValidade(response);
+          this.request(options, function (error: any, response: any) {
+            // exceptionValidade(response);
             return response;
           });
     }    
@@ -24,8 +24,8 @@ export class HttpRequestFactory {
             body: body
         };
 
-        this.request(options, function (error, response) {
-            this.exceptionValidade(response);
+        this.request(options, function (error: any, response: any) {
+            // this.exceptionValidade(response);
             return response;
         });
     }
@@ -38,16 +38,16 @@ export class HttpRequestFactory {
             }
           };
 
-          this.request(options, function (error, response) {
-            this.exceptionValidade(response);
+          this.request(options, function (error: any, response: any) {
+            // this.exceptionValidade(response);
             return response;
           });
     }
 
 
-    private exceptionValidade(response): void{
-        if(response.statusCode() != 200) {
-            throw new Error(response.statusCode() + " - error: " + response.body());
-        }
-    }
+    // private exceptionValidade(response): void{
+    //     if(response.statusCode() != 200) {
+    //         throw new Error(response.statusCode() + " - error: " + response.body());
+    //     }
+    // }
 }

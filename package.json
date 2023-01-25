@@ -4,13 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "zapsign": "node ./src/testando.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "tsconfig-paths": "^4.1.2",
     "typescript": "^4.9.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZapSign/zapsign_SdkNode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZapSign/zapsign_SdkNode/issues"
+  },
+  "homepage": "https://github.com/ZapSign/zapsign_SdkNode#readme"
 }
