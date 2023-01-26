@@ -1,7 +1,7 @@
 import { Doc } from "./Doc";
 
 export class DocFromDocx extends Doc {
-    private url_docx: string;
+    // private url_docx: string;
 
     // @Builder(builderMethodName = "docFromDocxBuilder")
     // public DocFromDocx(

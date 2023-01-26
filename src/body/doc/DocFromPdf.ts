@@ -3,6 +3,11 @@ import { Doc } from "./Doc";
 export class DocFromPdf extends Doc {
     private url_pdf: string;
 
+    constructor() {
+        super();
+        this.url_pdf = '';
+    }
+
     public getUrl_pdf(): string {
         return this.url_pdf;
     }

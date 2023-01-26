@@ -17,7 +17,7 @@ export class Doc {
     private signers: string[];
     private reminder_every_n_days: number;
 
-    public Doc() {
+    constructor() {
         this.sandbox = false;
         this.name = "";
         this.lang = "pt-br";
@@ -32,6 +32,7 @@ export class Doc {
         this.signature_order_active = false;
         this.signers = [];
         this.observers = [];
+        this.reminder_every_n_days = 0;
     }
 
     public isSandbox(): boolean {
@@ -58,79 +59,79 @@ export class Doc {
         this.lang = lang;
     }
 
-    public isDisable_signer_emails(): boolean {
+    public isDisableSignerEmails(): boolean {
         return this.disable_signer_emails;
     }
 
-    public setDisable_signer_emails(disable_signer_emails: boolean): void {
-        this.disable_signer_emails = disable_signer_emails;
+    public setDisableSignerEmails(disableSignerEmails: boolean): void {
+        this.disable_signer_emails = disableSignerEmails;
     }
 
-    public isSigned_file_only_finished(): boolean {
+    public isSignedFileOnlyFinished(): boolean {
         return this.signed_file_only_finished;
     }
 
-    public setSigned_file_only_finished(signed_file_only_finished: boolean): void {
-        this.signed_file_only_finished = signed_file_only_finished;
+    public setSigneFileOnlyFinished(signedFileOnlyFinished: boolean): void {
+        this.signed_file_only_finished = signedFileOnlyFinished;
     }
 
-    public getBrand_logo(): string {
+    public getBrandLogo(): string {
         return this.brand_logo;
     }
 
-    public setBrand_logo(brand_logo: string): void {
-        this.brand_logo = brand_logo;
+    public setBrandLogo(brandLogo: string): void {
+        this.brand_logo = brandLogo;
     }
 
-    public getBrand_primary_color(): string {
+    public getBrandPrimaryColor(): string {
         return this.brand_primary_color;
     }
 
-    public setBrand_primary_color(brand_primary_color: string): void {
-        this.brand_primary_color = brand_primary_color;
+    public setBrandPrimaryColor(brandPrimaryColor: string): void {
+        this.brand_primary_color = brandPrimaryColor;
     }
 
-    public getBrand_name(): string {
+    public getBrandName(): string {
         return this.brand_name;
     }
 
-    public setBrand_name(brand_name: string): void {
-        this.brand_name = brand_name;
+    public setBrandName(brandName: string): void {
+        this.brand_name = brandName;
     }
 
-    public getExternal_id(): string {
+    public getExternalId(): string {
         return this.external_id;
     }
 
-    public setExternal_id(external_id: string): void {
-        this.external_id = external_id;
+    public setExternalId(externalId: string): void {
+        this.external_id = externalId;
     }
 
-    public getFolder_path(): string {
+    public getFolderPath(): string {
         return this.folder_path;
     }
 
-    public setFolder_path(folder_path: string): void {
-        this.folder_path = folder_path;
+    public setFolderPath(folderPath: string): void {
+        this.folder_path = folderPath;
     }
 
-    public getDate_limit_to_sign(): Date {
+    public getDateLimitToSign(): Date {
         return this.date_limit_to_sign;
     }
 
-    public setDate_limit_to_sign(date_limit_to_sign: Date): void {
-        this.date_limit_to_sign = date_limit_to_sign;
+    public setDateLimitToSign(dateLimitToSign: Date): void {
+        this.date_limit_to_sign = dateLimitToSign;
     }
 
-    public isSignature_order_active(): boolean {
+    public isSignatureOrderActive(): boolean {
         return this.signature_order_active;
     }
 
-    public setSignature_order_active(signature_order_active: boolean): void {
+    public setSignatureOrderActive(signature_order_active: boolean): void {
         this.signature_order_active = signature_order_active;
     }
 
-    public  getObservers(): string[] {
+    public getObservers(): string[] {
         return this.observers;
     }
 
@@ -138,11 +139,11 @@ export class Doc {
         this.observers = observers;
     }
 
-    public getReminder_every_n_days(): number {
+    public getReminderEveryNdays(): number {
         return this.reminder_every_n_days;
     }
 
-    public setReminder_every_n_days(reminder_every_n_days: number): void {
+    public setReminderEveryNdays(reminder_every_n_days: number): void {
         this.reminder_every_n_days = reminder_every_n_days;
     }
 
