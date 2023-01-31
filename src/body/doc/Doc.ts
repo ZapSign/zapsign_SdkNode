@@ -14,7 +14,7 @@ export class Doc {
     private date_limit_to_sign: Date;
     private signature_order_active: boolean;
     private observers: string[];
-    private signers: string[];
+    private signers: Signer[];
     private reminder_every_n_days: number;
 
     constructor() {
@@ -147,12 +147,12 @@ export class Doc {
         this.reminder_every_n_days = reminder_every_n_days;
     }
 
-    // public List<Signer> getSigners() throws Exception {
-    //     return signers;
-    // }
+    public getSigners(): Signer[] {
+        return this.signers;
+    }
 
-    // public void setSigners(List<Signer> signers) throws Exception {
-    //     this.signers = signers;
-    // }
+    public setSigners(signers: Signer[]): void {
+        this.signers = signers;
+    }
 }
 

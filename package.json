@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/ZapSign/zapsign_SdkNode/issues"
   },
-  "homepage": "https://github.com/ZapSign/zapsign_SdkNode#readme"
+  "homepage": "https://github.com/ZapSign/zapsign_SdkNode#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }

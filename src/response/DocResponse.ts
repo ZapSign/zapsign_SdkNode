@@ -5,6 +5,7 @@ import { Template } from "../body/Template";
 import { ExtraDocResponse } from "./ExtraDocResponse";
 
 export class DocResponse extends Doc {
+
     private open_id: number;
     private token: string;
     private status: string;
@@ -21,9 +22,24 @@ export class DocResponse extends Doc {
     private answers: Answers[];
     private auto_reminder: number;
 
-    // public DocResponse() {
-    //     super();
-    // }
+    constructor() {
+        super();
+        this.open_id = 0;
+        this.token = '';
+        this.status = '';
+        this.original_file = '';
+        this.signed_file = '';
+        this.created_through = '';
+        this.extra_docs = [new ExtraDocResponse()];
+        this.deleted = false;
+        this.deleted_at = '';
+        this.created_at = '';
+        this.last_update_at = '';
+        this.created_by = new CreateBy();
+        this.template = new Template();
+        this.answers = [new Answers()];
+        this.auto_reminder = 0
+    }
 
     public getOpen_id(): number {
         return this.open_id;

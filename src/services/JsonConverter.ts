@@ -57,28 +57,23 @@ import { Signer } from "../body/signer/Signer";
     //}
 
      public jsonToDocResponse(jsonResponse: string): DocResponse {
-        return JSON.parse(jsonResponse);
-        // Object.assign(new Foo, { a: 1 })
+        return JSON.parse(JSON.stringify(jsonResponse));
      }
 
-    public jsonToDocsResponse(jsonResponse: string): DocsResponse {
-        //return this.mapper.readValue(jsonResponse, DocsResponse.class);
-        return JSON.parse(jsonResponse);
+    public jsonToDocsResponse(jsonResponse: string) {
+        return JSON.parse(JSON.stringify(jsonResponse));
     }
 
     public jsonToDocAsyncResponse(jsonResponse: string): DocAsyncResponse {
-        //return this.mapper.readValue(jsonResponse, DocAsyncResponse.class);
-        return JSON.parse(jsonResponse);
+        return JSON.parse(JSON.stringify(jsonResponse));
 
     }
 
     public jsonToExtraDocResponse(jsonResponse: string): ExtraDocResponse {
-        //return this.mapper.readValue(jsonResponse, ExtraDocResponse.class);
-        return JSON.parse(jsonResponse);
+        return JSON.parse(JSON.stringify(jsonResponse));
     }
 
     public jsonToSigner(jsonResponse: string): Signer {
-        // return this.mapper.readValue(jsonResponse, Signer.class);
-        return JSON.parse(jsonResponse);
+        return JSON.parse(JSON.stringify(jsonResponse));
     }
  }

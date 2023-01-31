@@ -7,28 +7,35 @@ export class DocFromTemplate extends Doc {
     private template_id: string;
     private data: DeParaTemplate[];
 
+    
+    // @Override
+    // public void setSigners(List<Signer> signers) throws Exception {
+        //     throw new Exception("you can not set signers in DocFromTemplate, try setSigner_name");
+        // }
+        
+    constructor() {
+        super() ;
+        this.signer_name = '';
+        this.template_id = '';
+        this.data = [new DeParaTemplate()];
+    }
+
     // public getSigners(): Signer[]  {
-    //     // public List<Signer> getSigners() {
     //     return null;
     // }
 
-    // @Override
-    // public void setSigners(List<Signer> signers) throws Exception {
-    //     throw new Exception("you can not set signers in DocFromTemplate, try setSigner_name");
-    // }
-
-    public getSigner_name(): string {
+    public getSignerName(): string {
         return this.signer_name;
     }
 
-    public setSigner_name(signer_name: string): void {
+    public setSignerName(signer_name: string): void {
         this.signer_name = signer_name;
     }
 
-    public getTemplate_id(): string {
+    public getTemplateId(): string {
         return this.template_id;
     }
-    public setTemplate_id(template_id: string): void {
+    public setTemplateId(template_id: string): void {
         this.template_id = template_id;
     }
 

@@ -1,3 +1,4 @@
+import { DocsResponse } from "src/response/DocsResponse";
 import { DocFromPdf } from "../body/doc/DocFromPdf";
 import { HttpRequestFactory } from "../services/HttpRequestFactory";
 import { JsonConverter } from "../services/JsonConverter";
@@ -6,6 +7,10 @@ export default class DocRequests {
     private apiRoute: string = "https://api.zapsign.com.br/api/v1/";
     private jsonConverter: JsonConverter = new JsonConverter();
     private apiToken: string = '';
+
+    constructor(apiToken: string) {
+        this.apiToken = apiToken;
+    }
 
     public DocRequests(apiToken: string) {
         this.apiToken = apiToken;
@@ -31,6 +36,16 @@ export default class DocRequests {
 
         // return this.jsonConverter.jsonToDocResponse(response.body());
     }
+
+
+    public async getDocs()  {
+        const uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
+
+        const response = await new HttpRequestFactory().getRequest(uri);
+
+        return this.jsonConverter.jsonToDocsResponse(response);
+    }
+
 
 //     public DocResponse createDocFromUploadDocx(DocFromDocx doc) throws Exception {
 //         String jsonDoc = new JsonConverter().docFromDocxToJson(doc);
@@ -88,14 +103,6 @@ export default class DocRequests {
 //         HttpResponse<String> response = new HttpRequestFactory().getRequest(uri);
 
 //         return this.jsonConverter.jsonToDocResponse(response.body());
-//     }
-
-//     public DocsResponse getDocs() throws Exception {
-//         String uri = this.apiRoute+"docs/?api_token="+this.apiToken;
-
-//         HttpResponse<String> response = new HttpRequestFactory().getRequest(uri);
-
-//         return this.jsonConverter.jsonToDocsResponse(response.body());
 //     }
 
 //     public DocResponse deleteDoc(String docToken) throws Exception {

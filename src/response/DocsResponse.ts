@@ -1,10 +1,18 @@
 import { DocResponse } from "./DocResponse";
 
 export class DocsResponse {
+
     private count: number;
     private next: string;
     private previous: string;
     private results: DocResponse[];
+
+    constructor() {
+        this.count = 0;
+        this.next = '';
+        this.previous = '';
+        this.results = [new DocResponse()]
+    }
 
     public getCount(): number {
         return this.count;

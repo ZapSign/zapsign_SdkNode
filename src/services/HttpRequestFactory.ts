@@ -1,20 +1,20 @@
 export class HttpRequestFactory {
     request = require('request');
 
-    public getRequest(url: string) {
-        var options = {
+    public async getRequest(url: string) {
+        let options = {
             'method': 'GET',
             'url': url,
             'headers': {}
           };
 
-          this.request(options, function (error: any, response: any) {
-            // exceptionValidade(response);
-            return response;
-          });
+          const response = await this.request(options, function (error: any, response: any, body: any) {
+                return body;
+            });
+        return response
     }    
 
-    public postRequest(url: string, body: string) {
+    public async postRequest(url: string, body: string) {
         let options = {
             'method': 'POST',
             'url': url,
@@ -24,13 +24,13 @@ export class HttpRequestFactory {
             body: body
         };
 
-        this.request(options, function (error: any, response: any) {
-            // this.exceptionValidade(response);
-            return response;
+        const response = await this.request(options, function (error: any, response: any, body: any) {
+            return body;
         });
+    return response
     }
 
-    public deleteRequest(url: string) {
+    public async deleteRequest(url: string) {
         var options = {
             'method': 'DELETE',
             'url': url,
@@ -38,10 +38,10 @@ export class HttpRequestFactory {
             }
           };
 
-          this.request(options, function (error: any, response: any) {
-            // this.exceptionValidade(response);
-            return response;
-          });
+          const response = await this.request(options, function (error: any, response: any, body: any) {
+            return body;
+        });
+    return response
     }
 
 
