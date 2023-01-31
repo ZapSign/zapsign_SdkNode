@@ -1,3 +1,6 @@
+import { DocFromDocx } from "src/body/doc/DocFromDocx";
+import { DocFromTemplate } from "src/body/doc/DocFromTemplate";
+import { ExtraDoc } from "src/body/doc/ExtraDoc";
 import { DocsResponse } from "src/response/DocsResponse";
 import { DocFromPdf } from "../body/doc/DocFromPdf";
 import { HttpRequestFactory } from "../services/HttpRequestFactory";
@@ -24,17 +27,15 @@ export default class DocRequests {
         this.apiToken = apiToken;
     }
 
-    public createDocFromUploadPdf(doc: DocFromPdf) {
-        // throw new Error();
+    public async createDocFromUploadPdf(doc: DocFromPdf) {
 
         const jsonDoc: string = this.jsonConverter.docFromPdfToJson(doc);
 
         const uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
 
-        const response = new HttpRequestFactory().postRequest(uri, jsonDoc);
-        // HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-        // return this.jsonConverter.jsonToDocResponse(response.body());
+        return this.jsonConverter.jsonToDocsResponse(response);
     }
 
 
@@ -47,79 +48,79 @@ export default class DocRequests {
     }
 
 
-//     public DocResponse createDocFromUploadDocx(DocFromDocx doc) throws Exception {
-//         String jsonDoc = new JsonConverter().docFromDocxToJson(doc);
+    public async createDocFromUploadDocx(doc: DocFromDocx) {
+        const jsonDoc: string = new JsonConverter().docFromDocxToJson(doc);
 
-//         String uri = this.apiRoute+"docs/?api_token="+this.apiToken;
+        const uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-//         return this.jsonConverter.jsonToDocResponse(response.body());
-//     }
+        return this.jsonConverter.jsonToDocResponse(response);
+    }
 
-//     public DocAsyncResponse createDocFromUploadAsync(DocFromPdf doc) throws Exception {
-//         String jsonDoc = new JsonConverter().docFromPdfToJson(doc);
+    public async createDocFromUploadAsync(doc: DocFromPdf) {
+        const jsonDoc: string = new JsonConverter().docFromPdfToJson(doc);
 
-//         String uri = this.apiRoute+"docs/async/?api_token="+this.apiToken;
+        const uri: string = this.apiRoute+"docs/async/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-//         return this.jsonConverter.jsonToDocAsyncResponse(response.body());
-//     }
+        return this.jsonConverter.jsonToDocAsyncResponse(response);
+    }
 
-//     public DocResponse createDocFromTemplate(DocFromTemplate doc) throws Exception {
-//         String jsonDoc = new JsonConverter().docFromTemplateToJson(doc);
+    public async createDocFromTemplate(doc: DocFromTemplate) {
+        const jsonDoc: string = new JsonConverter().docFromTemplateToJson(doc);
 
-//         String uri = this.apiRoute+"models/create-doc/?api_token="+this.apiToken;
+        const uri: string = this.apiRoute+"models/create-doc/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-//         return this.jsonConverter.jsonToDocResponse(response.body());
-//     }
+        return this.jsonConverter.jsonToDocResponse(response);
+    }
 
-//     public DocAsyncResponse createDocFromTemplateAsync(DocFromTemplate doc) throws Exception {
-//         String jsonDoc = new JsonConverter().docFromTemplateToJson(doc);
+    public async createDocFromTemplateAsync(doc: DocFromTemplate) {
+        const jsonDoc: string = new JsonConverter().docFromTemplateToJson(doc);
 
-//         String uri = this.apiRoute+"models/create-doc/async/?api_token="+this.apiToken;
+        const uri: string = this.apiRoute+"models/create-doc/async/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-//         return this.jsonConverter.jsonToDocAsyncResponse(response.body());
-//     }
+        return this.jsonConverter.jsonToDocAsyncResponse(response);
+    }
 
-//     public ExtraDocResponse addExtraDoc(String docToken, ExtraDoc extraDoc) throws Exception {
-//         String jsonDoc = new JsonConverter().extraDocsToJson(extraDoc);
+    public async addExtraDoc(docToken: string, extraDoc: ExtraDoc) {
+        const jsonDoc: string = new JsonConverter().extraDocsToJson(extraDoc);
 
-//         String uri = this.apiRoute+"docs/"+docToken+"/upload-extra-doc/?api_token="+this.apiToken;
+        const  uri: string = this.apiRoute+"docs/"+docToken+"/upload-extra-doc/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-//         return this.jsonConverter.jsonToExtraDocResponse(response.body());
-//     }
+        return this.jsonConverter.jsonToExtraDocResponse(response);
+    }
 
-//     public DocResponse detailDoc(String docToken) throws Exception {
-//         String uri = this.apiRoute+"docs/"+docToken+"/?api_token="+this.apiToken;
+    public async detailDoc(docToken: string) {
+        const uri: string = this.apiRoute+"docs/"+docToken+"/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().getRequest(uri);
+        const response = await new HttpRequestFactory().getRequest(uri);
 
-//         return this.jsonConverter.jsonToDocResponse(response.body());
-//     }
+        return this.jsonConverter.jsonToDocResponse(response);
+    }
 
-//     public DocResponse deleteDoc(String docToken) throws Exception {
-//         String uri = this.apiRoute+"docs/"+docToken+"/?api_token="+this.apiToken;
+    public async deleteDoc(docToken: string) {
+        const uri: string = this.apiRoute+"docs/"+docToken+"/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().deleteRequest(uri);
+        const response = await new HttpRequestFactory().deleteRequest(uri);
 
-//         return this.jsonConverter.jsonToDocResponse(response.body());
-//     }
+        return this.jsonConverter.jsonToDocResponse(response);
+    }
 
-//     public int placeSignatures(String docToken, RubricaList rubricaList) throws Exception {
-//         String jsonDoc = new JsonConverter().rubricaListToJson(rubricaList);
+    // public async placeSignatures(docToken: string, rubricaList: RubricaList): number {
+    //     const jsonDoc: string = await = new JsonConverter().rubricaListToJson(rubricaList);
 
-//         String uri = this.apiRoute+"docs/"+docToken+"/place-signatures/?api_token="+this.apiToken;
+    //     const uri: string = this.apiRoute+"docs/"+docToken+"/place-signatures/?api_token="+this.apiToken;
 
-//         HttpResponse<String> response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+    //     const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-//         return response.statusCode();
-//     }
+    //     return response.statusCode();
+    // }
 }
