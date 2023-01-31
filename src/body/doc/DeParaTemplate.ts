@@ -6,11 +6,6 @@ export class DeParaTemplate {
         this.de = '';
         this.para = ''
     }
-    // @Builder(builderMethodName = "deParaTemplateBuilder")
-    // public DeParaTemplate(String de, String para) {
-    //     this.de = de;
-    //     this.para = para;
-    // }
 
     public DeParaTemplateBuilder(de: string, para: string) {
         this.setDe(de);

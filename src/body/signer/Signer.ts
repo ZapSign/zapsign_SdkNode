@@ -37,52 +37,6 @@ export class Signer {
     private send_via: string;
     private require_document_photo: string;
 
-    // @Builder
-    // public Signer(
-    //     String name,
-    //     String email,
-    //     String auth_mode,
-    //     boolean send_automatic_email,
-    //     boolean send_automatic_whatsapp,
-    //     int order_group,
-    //     String custom_message,
-    //     String phone_country,
-    //     String phone_number,
-    //     boolean lock_email,
-    //     boolean blank_email,
-    //     boolean hide_email,
-    //     boolean lock_phone,
-    //     boolean blank_phone,
-    //     boolean hide_phone,
-    //     boolean lock_name,
-    //     boolean require_selfie_photo,
-    //     String selfie_validation_type,
-    //     String qualification,
-    //     String external_id,
-    //     String redirect_link
-    // ) {
-    //     this.name = name;
-    //     this.email = email;
-    //     this.auth_mode = auth_mode;
-    //     this.send_automatic_email = send_automatic_email;
-    //     this.send_automatic_whatsapp = send_automatic_whatsapp;
-    //     this.order_group = order_group;
-    //     this.custom_message = custom_message;
-    //     this.phone_country = phone_country;
-    //     this.phone_number = phone_number;
-    //     this.lock_email = lock_email;
-    //     this.blank_email = blank_email;
-    //     this.hide_email = hide_email;
-    //     this.lock_phone = lock_phone;
-    //     this.blank_phone = blank_phone;
-    //     this.hide_phone = hide_phone;
-    //     this.lock_name = lock_name;
-    //     this.require_selfie_photo = require_selfie_photo;
-    //     this.selfie_validation_type = selfie_validation_type;
-    //     this.qualification = qualification;
-    //     this.external_id = external_id;
-    //     this.redirect_link = redirect_link;
-    // }
 
     public getName(): string {
         return this.name;

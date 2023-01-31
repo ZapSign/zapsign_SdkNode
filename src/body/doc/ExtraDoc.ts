@@ -2,12 +2,6 @@ export class ExtraDoc {
     private name: string;
     private url_pdf: string;
 
-    // @Builder(builderMethodName = "extraDocBuilder")
-    // public ExtraDoc(String name, String url_pdf) {
-    //     this.name = name;
-    //     this.url_pdf = url_pdf;
-    // }
-
     public getName(): string {
         return this.name;
     }
