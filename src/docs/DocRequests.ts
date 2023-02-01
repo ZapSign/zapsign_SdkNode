@@ -1,7 +1,7 @@
 import { DocFromDocx } from "src/body/doc/DocFromDocx";
 import { DocFromTemplate } from "src/body/doc/DocFromTemplate";
 import { ExtraDoc } from "src/body/doc/ExtraDoc";
-import { DocsResponse } from "src/response/DocsResponse";
+import { RubricasArray } from "src/body/doc/RubricasArray";
 import { DocFromPdf } from "../body/doc/DocFromPdf";
 import { HttpRequestFactory } from "../services/HttpRequestFactory";
 import { JsonConverter } from "../services/JsonConverter";
@@ -114,13 +114,13 @@ export default class DocRequests {
         return this.jsonConverter.jsonToDocResponse(response);
     }
 
-    // public async placeSignatures(docToken: string, rubricaList: RubricaList): number {
-    //     const jsonDoc: string = await = new JsonConverter().rubricaListToJson(rubricaList);
+    public async placeSignatures(docToken: string, rubricaList: RubricasArray): Promise<number> {
+        const jsonDoc: string = new JsonConverter().rubricaListToJson(rubricaList);
 
-    //     const uri: string = this.apiRoute+"docs/"+docToken+"/place-signatures/?api_token="+this.apiToken;
+        const uri: string = this.apiRoute+"docs/"+docToken+"/place-signatures/?api_token="+this.apiToken;
 
-    //     const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-    //     return response.statusCode();
-    // }
+        return response;
+    }
 }

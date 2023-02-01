@@ -1,3 +1,4 @@
+import { SignBatch } from "src/body/signer/SignBatch";
 import { Signer } from "../body/signer/Signer";
 import { HttpRequestFactory } from "../services/HttpRequestFactory";
 import { JsonConverter } from "../services/JsonConverter";
@@ -55,13 +56,13 @@ export class SignerRequest {
         return response;
     }
 
-    // async public signInBatch(SignBatch signBatch): Promise<string> {
-    //     String jsonDoc = this.jsonConverter.signBachToJson(signBatch);
+    public async signInBatch(signBatch: SignBatch): Promise<string> {
+        const jsonDoc: string = this.jsonConverter.signBachToJson(signBatch);
 
-    //     String uri = this.apiRoute+"sign/?api_token="+this.apiToken;
+        const uri: string = this.apiRoute+"sign/?api_token="+this.apiToken;
 
-    //     const response = new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const response = new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-    //     return response;
-    // }
+        return response;
+    }
 }

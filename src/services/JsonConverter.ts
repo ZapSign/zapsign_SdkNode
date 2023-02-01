@@ -1,13 +1,14 @@
-import { DocResponse } from "../response/DocResponse";
-import { DocsResponse } from "../response/DocsResponse";
-import { DocAsyncResponse } from "../response/DocAsyncResponse";
-import { ExtraDocResponse } from "../response/ExtraDocResponse";
-import { DocFromPdf } from "../body/doc/DocFromPdf";
-import { DocFromDocx } from "../body/doc/DocFromDocx";
-import { DocFromTemplate } from "../body/doc/DocFromTemplate";
-import { ExtraDoc } from "../body/doc/ExtraDoc";
-import { Signer } from "../body/signer/Signer";
-//import { SignBatch } from "../body/signer/SignBatch";
+import { DocResponse } from '../response/DocResponse';
+import { DocsResponse } from '../response/DocsResponse';
+import { DocAsyncResponse } from '../response/DocAsyncResponse';
+import { ExtraDocResponse } from '../response/ExtraDocResponse';
+import { DocFromPdf } from '../body/doc/DocFromPdf';
+import { DocFromDocx } from '../body/doc/DocFromDocx';
+import { DocFromTemplate } from '../body/doc/DocFromTemplate';
+import { ExtraDoc } from '../body/doc/ExtraDoc';
+import { Signer } from '../body/signer/Signer';
+import { RubricasArray } from 'src/body/doc/RubricasArray';
+import { SignBatch } from '../body/signer/SignBatch';
 
  export class JsonConverter {        
 
@@ -43,18 +44,17 @@ import { Signer } from "../body/signer/Signer";
         return JSON.stringify(extraDoc);
     }
 
-    //public rubricaListToJson(RubricaList rubricaList: ): string {
-    //    return objecWriter.writeValueAsString(rubricaList);
-    //}
+    public rubricaListToJson(rubricasArray: RubricasArray ): string {
+        return JSON.stringify(rubricasArray);
+    }
 
     public signerToJson(signer: Signer): string {
         return JSON.stringify(signer);
-
     }
 
-    //public signBachToJson(SignBatch signBatch): string {
-      //  return objecWriter.writeValueAsString(signBatch);
-    //}
+    public signBachToJson(signBatch: SignBatch): string {
+        return JSON.stringify(signBatch);
+    }
 
      public jsonToDocResponse(jsonResponse: string): DocResponse {
         return JSON.parse(JSON.stringify(jsonResponse));
