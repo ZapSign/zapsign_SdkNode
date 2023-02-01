@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/ZapSign/zapsign_SdkNode#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "request": "^2.88.2"
   }
 }

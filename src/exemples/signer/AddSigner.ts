@@ -1,9 +1,10 @@
+require('dotenv').config();
 import { Signer } from "../../body/signer/Signer";
 import { JsonConverter } from "../../services/JsonConverter";
 import { SignerRequest } from "../../signers/SignerRequest";
 
-const apiToken = '7c3a7080-04fe-43f8-bbb1-42b73bf15abd3216e318-a02b-4685-9822-30929e8a6010';
-const docToken = 'bfb65044-affb-429d-9d60-2d8cb8b9634b';
+const apiToken: any = process.env.APITOKEN;
+const docToken: any = process.env.DOCTOKEN;
 
 const name: string = 'New Signer Name';
 const email: string = "newEmail@test.com";

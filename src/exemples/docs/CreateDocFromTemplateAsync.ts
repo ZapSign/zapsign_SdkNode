@@ -1,10 +1,11 @@
+require('dotenv').config();
 import { Signer } from "../../body/signer/Signer";
 import DocRequests from "../../docs/DocRequests";
 import { JsonConverter } from "../../services/JsonConverter";
 import { DeParaTemplate } from "../../body/doc/DeParaTemplate";
 import { DocFromTemplate } from "../../body/doc/DocFromTemplate";
 
-const apiToken = '7c3a7080-04fe-43f8-bbb1-42b73bf15abd3216e318-a02b-4685-9822-30929e8a6010'
+const apiToken: any = process.env.APITOKEN;
 
 const deParaTemplateName = new DeParaTemplate("{{NOME COMPLETO}}", "Full Name");
 
@@ -16,7 +17,9 @@ let deParaTemplates = [];
 
 deParaTemplates.push(deParaTemplateName, deParaTemplateCpf, deParaTemplateEndereco);
 
-const docFromTemplate = new DocFromTemplate(true, 'My New Doc From Template', 'pt-br', true, false, '', '', '', '', './', new Date(), false, [], [new Signer('', '', '', false, false, 0, '', '', '', false, false, false, false, false, false, false, false, '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '')], 0, 'My Signer for template async', '493e86dd-0427-40dd-99d4-2a5113bd896e', deParaTemplates)
+const templateId: any = process.env.TEMPLATE_ID_MODELO_FIXO
+
+const docFromTemplate = new DocFromTemplate(true, 'My New Doc From Template', 'pt-br', true, false, '', '', '', '', './', new Date(), false, [], [new Signer('', '', '', false, false, 0, '', '', '', false, false, false, false, false, false, false, false, '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '')], 0, 'My Signer for template async', templateId, deParaTemplates)
 
 async function testeCreateDocFromTemplateAsync() {
     try {

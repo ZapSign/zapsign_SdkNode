@@ -1,8 +1,9 @@
+require('dotenv').config();
 import { JsonConverter } from "../../services/JsonConverter";
 import DocRequests from "../../docs/DocRequests";
 
-const apiToken = '7c3a7080-04fe-43f8-bbb1-42b73bf15abd3216e318-a02b-4685-9822-30929e8a6010'
-const docToken = 'fca8d1a8-ab24-4692-a643-4621e911c05c';
+const apiToken: any = process.env.APITOKEN;
+const docToken: any = process.env.TOKEN_DOC_TO_BE_DELETED;
 
 async function testeDeleteDoc() {
     try {
@@ -15,4 +16,4 @@ async function testeDeleteDoc() {
     }
 }
 
-testeDeleteDoc().then(data => console.log('data', data));
+testeDeleteDoc()
