@@ -21,7 +21,7 @@ export class SignerRequest {
     }
 
     public async detailSigner(signerToken: string): Promise<Signer> {
-        const uri: string = this.apiRoute+"signers/"+signerToken+"/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}signers/${signerToken}/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().getRequest(uri);
 
@@ -31,7 +31,7 @@ export class SignerRequest {
     public async updateSigner(signerToken: string, signer: Signer): Promise<Signer> {
         const jsonDoc: string = this.jsonConverter.signerToJson(signer);
 
-        const uri: string = this.apiRoute+"signers/"+signerToken+"/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}signers/${signerToken}/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -41,7 +41,7 @@ export class SignerRequest {
     public async addSigner(docToken: string, signer: Signer): Promise<Signer> {
         const jsonDoc: string = this.jsonConverter.signerToJson(signer);
 
-        const uri: string = this.apiRoute+"docs/"+docToken+"/add-signer/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/${docToken}/add-signer/?api_token=${this.apiToken}`;
 
         const response = await  new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -49,7 +49,7 @@ export class SignerRequest {
     }
 
     public async deleteSigner(docToken: string): Promise<string> {
-        const uri: string = this.apiRoute+"signer/"+docToken+"/remove/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}signer/${docToken}/remove/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().deleteRequest(uri);
 
@@ -59,7 +59,7 @@ export class SignerRequest {
     public async signInBatch(signBatch: SignBatch): Promise<string> {
         const jsonDoc: string = this.jsonConverter.signBachToJson(signBatch);
 
-        const uri: string = this.apiRoute+"sign/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}sign/?api_token=${this.apiToken}`;
 
         const response = new HttpRequestFactory().postRequest(uri, jsonDoc);
 

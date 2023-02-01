@@ -31,7 +31,7 @@ export default class DocRequests {
 
         const jsonDoc: string = this.jsonConverter.docFromPdfToJson(doc);
 
-        const uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -40,7 +40,7 @@ export default class DocRequests {
 
 
     public async getDocs()  {
-        const uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().getRequest(uri);
 
@@ -51,7 +51,7 @@ export default class DocRequests {
     public async createDocFromUploadDocx(doc: DocFromDocx) {
         const jsonDoc: string = new JsonConverter().docFromDocxToJson(doc);
 
-        const uri: string = this.apiRoute+"docs/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -61,7 +61,7 @@ export default class DocRequests {
     public async createDocFromUploadAsync(doc: DocFromPdf) {
         const jsonDoc: string = new JsonConverter().docFromPdfToJson(doc);
 
-        const uri: string = this.apiRoute+"docs/async/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/async/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -71,7 +71,7 @@ export default class DocRequests {
     public async createDocFromTemplate(doc: DocFromTemplate) {
         const jsonDoc: string = new JsonConverter().docFromTemplateToJson(doc);
 
-        const uri: string = this.apiRoute+"models/create-doc/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}models/create-doc/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -81,7 +81,7 @@ export default class DocRequests {
     public async createDocFromTemplateAsync(doc: DocFromTemplate) {
         const jsonDoc: string = new JsonConverter().docFromTemplateToJson(doc);
 
-        const uri: string = this.apiRoute+"models/create-doc/async/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}models/create-doc/async/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -91,7 +91,7 @@ export default class DocRequests {
     public async addExtraDoc(docToken: string, extraDoc: ExtraDoc) {
         const jsonDoc: string = new JsonConverter().extraDocsToJson(extraDoc);
 
-        const  uri: string = this.apiRoute+"docs/"+docToken+"/upload-extra-doc/?api_token="+this.apiToken;
+        const  uri: string = `${this.apiRoute}docs/${docToken}/upload-extra-doc/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
@@ -99,7 +99,7 @@ export default class DocRequests {
     }
 
     public async detailDoc(docToken: string) {
-        const uri: string = this.apiRoute+"docs/"+docToken+"/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/${docToken}/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().getRequest(uri);
 
@@ -107,7 +107,7 @@ export default class DocRequests {
     }
 
     public async deleteDoc(docToken: string) {
-        const uri: string = this.apiRoute+"docs/"+docToken+"/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/${docToken}/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().deleteRequest(uri);
 
@@ -117,7 +117,7 @@ export default class DocRequests {
     public async placeSignatures(docToken: string, rubricaList: RubricasArray): Promise<number> {
         const jsonDoc: string = new JsonConverter().rubricaListToJson(rubricaList);
 
-        const uri: string = this.apiRoute+"docs/"+docToken+"/place-signatures/?api_token="+this.apiToken;
+        const uri: string = `${this.apiRoute}docs/${docToken}/place-signatures/?api_token=${this.apiToken}`;
 
         const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
