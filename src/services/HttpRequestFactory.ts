@@ -25,6 +25,7 @@ export class HttpRequestFactory {
         };
 
         const response = await this.request(options, function (error: any, response: any, body: any) {
+            console.log(response.statusCode);
             return body;
         });
     return response
