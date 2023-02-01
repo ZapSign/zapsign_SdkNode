@@ -5,7 +5,7 @@ export class DocFromDocxBuilder {
     docFromDocx: DocFromDocx;
 
     constructor() {
-        this.docFromDocx = new DocFromDocx();
+        this.docFromDocx = new DocFromDocx('');
     }
 
     // static withSandbox(sandbox) {

@@ -1,10 +1,12 @@
+import { Signer } from "src/body/signer/Signer";
 import { Doc } from "../Doc";
 
 export class DocBuilder {
     doc: Doc;
 
     constructor() {
-        this.doc = new Doc();
+        this.doc = new Doc(false, '', '', false, false, '', '', '', '', '', new Date(), false, [],
+        [new Signer('', '', '', false, false, 0, '', '', '', false, false, false, false, false, false, false, false, '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '')], 0);
     }
 
     withSandbox(sandbox: boolean){
