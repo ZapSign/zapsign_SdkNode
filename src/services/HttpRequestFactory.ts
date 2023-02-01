@@ -2,7 +2,7 @@ export class HttpRequestFactory {
     request = require('request');
 
     public async getRequest(url: string) {
-        let options = {
+        const options = {
             'method': 'GET',
             'url': url,
             'headers': {}
@@ -15,7 +15,7 @@ export class HttpRequestFactory {
     }    
 
     public async postRequest(url: string, body: string) {
-        let options = {
+        const options = {
             'method': 'POST',
             'url': url,
             'headers': {
@@ -32,7 +32,7 @@ export class HttpRequestFactory {
     }
 
     public async deleteRequest(url: string) {
-        var options = {
+        const options = {
             'method': 'DELETE',
             'url': url,
             'headers': {

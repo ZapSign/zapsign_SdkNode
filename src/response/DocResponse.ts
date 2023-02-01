@@ -169,11 +169,11 @@ export class DocResponse extends Doc {
         this.answers = answers;
     }
 
-    public getAuto_reminder(): number {
+    public getAutReminder(): number {
         return this.auto_reminder;
     }
 
-    public setAuto_reminder(auto_reminder: number): void {
-        this.auto_reminder = auto_reminder;
+    public setAutoReminder(autoReminder: number): void {
+        this.auto_reminder = autoReminder;
     }
 }
