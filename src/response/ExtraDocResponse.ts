@@ -5,6 +5,14 @@ export class ExtraDocResponse {
     private original_file: string;
     private signed_file: string;
 
+    constructor(open_id: string, token: string, name: string, original_file: string, signed_file: string) {
+        this.open_id = open_id;
+        this.token = token;
+        this.name = name;
+        this.original_file = original_file;
+        this.signed_file = signed_file;
+    }
+
     public getOpen_id() {
         return this.open_id;
     }

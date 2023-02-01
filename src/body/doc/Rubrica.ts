@@ -7,6 +7,24 @@ export class Rubrica {
     private type: string;
     private signer_token: string;
 
+    constructor(
+        page: number,
+        relative_position_bottom: number,
+        relative_position_left: number,
+        relative_size_x: number,
+        relative_size_y: number,
+        type: string,
+        signer_token: string
+        ) {
+            this.page = page;
+            this.relative_position_bottom = relative_position_bottom;
+            this.relative_position_left = relative_position_left;
+            this.relative_size_x = relative_size_x;
+            this.relative_size_y = relative_size_y;
+            this.type = type;
+            this.signer_token = signer_token
+        }
+
     public getPage(): number {
         return this.page;
     }

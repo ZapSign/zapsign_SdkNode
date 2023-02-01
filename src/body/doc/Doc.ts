@@ -1,39 +1,55 @@
 import { Signer } from "../signer/Signer";
 
 export class Doc {
-    private sandbox: boolean;
-    private name: string;
-    private lang: string;
-    private disable_signer_emails: boolean;
-    private signed_file_only_finished: boolean;
-    private brand_logo: string ;
-    private brand_primary_color: string;
-    private brand_name: string;
-    private external_id: string;
-    private folder_path: string;
-    private date_limit_to_sign: Date;
-    private signature_order_active: boolean;
+    private sandbox: boolean = false;;
+    private name: string = "";
+    private lang: string = "pt-br";
+    private disable_signer_emails: boolean = false;;
+    private signed_file_only_finished: boolean = false;
+    private brand_logo: string= "";
+    private brand_primary_color: string = "";
+    private brand_name: string = "";
+    private external_id: string = "";
+    private folder_path: string = "/";
+    private date_limit_to_sign: Date = new Date();
+    private signature_order_active: boolean = false;
     private observers: string[];
     private signers: Signer[];
-    private reminder_every_n_days: number;
+    private reminder_every_n_days: number = 0;
 
-    constructor() {
-        this.sandbox = false;
-        this.name = "";
-        this.lang = "pt-br";
-        this.disable_signer_emails = false;
-        this.signed_file_only_finished = false;
-        this.brand_logo = "";
-        this.brand_primary_color = "";
-        this.brand_name = "";
-        this.external_id = "";
-        this.folder_path = "/";
-        this.date_limit_to_sign = new Date();
-        this.signature_order_active = false;
-        this.signers = [];
-        this.observers = [];
-        this.reminder_every_n_days = 0;
-    }
+    constructor(
+        sandbox: boolean,
+        name: string,
+        lang: string,
+        disable_signer_emails: boolean,
+        signed_file_only_finished: boolean,
+        brand_logo: string,
+        brand_primary_color: string,
+        brand_name: string,
+        external_id: string,
+        folder_path: string,
+        date_limit_to_sign: Date,
+        signature_order_active: boolean,
+        observers: string[],
+        signers: Signer[],
+        reminder_every_n_days: number
+        ) {
+        this.sandbox = sandbox;
+        this.name = name;
+        this.lang = lang;
+        this.disable_signer_emails = disable_signer_emails;
+        this.signed_file_only_finished = signed_file_only_finished;
+        this.brand_logo = brand_logo;
+        this.brand_primary_color = brand_primary_color;
+        this.brand_name = brand_name;
+        this.external_id = external_id;
+        this.folder_path = folder_path;
+        this.date_limit_to_sign = date_limit_to_sign;
+        this.signature_order_active = signature_order_active;
+        this.observers = observers;
+        this.signers = signers;
+        this.reminder_every_n_days = reminder_every_n_days;
+        }
 
     public isSandbox(): boolean {
         return this.sandbox;

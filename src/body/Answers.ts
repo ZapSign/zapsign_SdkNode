@@ -2,6 +2,11 @@ export class Answers {
     private variable: string;
     private value: string;
 
+    constructor(variable: string, value: string) {
+        this.variable = variable;
+        this.value = value
+    }
+
     public getVariable(): string {
         return this.variable;
     }

@@ -13,11 +13,11 @@ export class DocFromTemplate extends Doc {
         //     throw new Exception("you can not set signers in DocFromTemplate, try setSigner_name");
         // }
         
-    constructor() {
-        super() ;
-        this.signer_name = '';
-        this.template_id = '';
-        this.data = [new DeParaTemplate()];
+    constructor(signer_name: string, template_id: string, data: DeParaTemplate[]) {
+        super(false, '', '', false, false, '', '', '', '', '', new Date(), false, [], [], 0) ;
+        this.signer_name = signer_name;
+        this.template_id = template_id;
+        this.data = data;
     }
 
     // public getSigners(): Signer[]  {

@@ -6,39 +6,55 @@ import { ExtraDocResponse } from "./ExtraDocResponse";
 
 export class DocResponse extends Doc {
 
-    private open_id: number;
-    private token: string;
-    private status: string;
-    private original_file: string;
-    private signed_file: string;
-    private created_through: string;
-    private extra_docs: ExtraDocResponse[];
-    private deleted: boolean;
-    private deleted_at: string;
-    private created_at: string;
-    private last_update_at: string;
-    private created_by: CreateBy;
-    private template: Template;
-    private answers: Answers[];
-    private auto_reminder: number;
+    private open_id: number = 0;
+    private token: string = '';
+    private status: string = '';
+    private original_file: string = '';
+    private signed_file: string = '';
+    private created_through: string = '';
+    private extra_docs: ExtraDocResponse[] = [new ExtraDocResponse('', '', '', '', '')];
+    private deleted: boolean = false;
+    private deleted_at: string = '';
+    private created_at: string = '';
+    private last_update_at: string = '';
+    private created_by: CreateBy = new CreateBy('');
+    private template: Template = new Template('');
+    private answers: Answers[] = [new Answers('', '')];
+    private auto_reminder: number = 0;
 
-    constructor() {
-        super();
-        this.open_id = 0;
-        this.token = '';
-        this.status = '';
-        this.original_file = '';
-        this.signed_file = '';
-        this.created_through = '';
-        this.extra_docs = [new ExtraDocResponse()];
-        this.deleted = false;
-        this.deleted_at = '';
-        this.created_at = '';
-        this.last_update_at = '';
-        this.created_by = new CreateBy();
-        this.template = new Template();
-        this.answers = [new Answers()];
-        this.auto_reminder = 0
+    constructor(
+        open_id: number,
+        token: string,
+        status: string,
+        original_file: string,
+        signed_file: string,
+        created_through: string,
+        extra_docs: ExtraDocResponse[],
+        deleted: boolean,
+        deleted_at: string,
+        created_at: string,
+        last_update_at: string,
+        created_by: CreateBy,
+        template: Template,
+        answers: Answers[],
+        auto_reminder: number 
+        ) {
+        super(false, '', '', false, false, '', '', '', '', '', new Date(), false, [], [], 0);
+        this.open_id = open_id;
+        this.token = token;
+        this.status = status;
+        this.original_file = original_file;
+        this.signed_file = signed_file;
+        this.created_through = created_through;
+        this.extra_docs = extra_docs;
+        this.deleted = deleted;
+        this.deleted_at = deleted_at;
+        this.created_at = created_at;
+        this.last_update_at = last_update_at;
+        this.created_by = created_by;
+        this.template = template;
+        this.answers = answers;
+        this.auto_reminder = auto_reminder
     }
 
     public getOpen_id(): number {

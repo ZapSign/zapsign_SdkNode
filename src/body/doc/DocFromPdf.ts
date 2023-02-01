@@ -3,9 +3,9 @@ import { Doc } from "./Doc";
 export class DocFromPdf extends Doc {
     private url_pdf: string;
 
-    constructor() {
-        super();
-        this.url_pdf = '';
+    constructor(url_pdf: string) {
+        super(false, '', '', false, false, '', '', '', '', '', new Date(), false, [], [], 0);
+        this.url_pdf = url_pdf;
     }
 
     public getUrl_pdf(): string {

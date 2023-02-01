@@ -2,6 +2,11 @@ export class ExtraDoc {
     private name: string;
     private url_pdf: string;
 
+    constructor(name: string, url_pdf: string) {
+        this.name = name;
+        this.url_pdf = url_pdf
+    }
+
     public getName(): string {
         return this.name;
     }

@@ -37,6 +37,83 @@ export class Signer {
     private send_via: string;
     private require_document_photo: string;
 
+    constructor(
+        name: string,
+        email: string, 
+        auth_mode: string,
+        send_automatic_email: boolean,
+        send_automatic_whatsapp: boolean,
+        order_group: number,
+        custom_message: string,
+        phone_country: string,
+        phone_number: string,
+        lock_email: boolean,
+        blank_email: boolean,
+        hide_email: boolean,
+        lock_phone: boolean,
+        blank_phone: boolean,
+        hide_phone: boolean,
+        lock_name: boolean,
+        require_selfie_photo: boolean,
+        selfie_validation_type: string,
+        qualification: string,
+        external_id: string,
+        redirect_link: string,
+        sign_url: string,
+        token: string,
+        status: string,
+        times_viewed: number,
+        last_view_at: string,
+        signed_at: string,
+        geo_latitude: string,
+        geo_longitude: string,
+        signature_image: string,
+        visto_image: string,
+        document_photo_url: string,
+        document_verse_photo_url: string,
+        selfie_photo_url: string,
+        selfie_photo_url2: string,
+        send_via: string,
+        require_document_photo: string
+        ) {
+            this.name = name;
+            this.email = email;
+            this.auth_mode = auth_mode;
+            this.send_automatic_email = send_automatic_email;
+            this.send_automatic_whatsapp = send_automatic_whatsapp;
+            this.order_group = order_group;
+            this.custom_message = custom_message;
+            this.phone_country = phone_country;
+            this.phone_number = phone_number;
+            this.lock_email = lock_email;
+            this.blank_email = blank_email;
+            this.hide_email = hide_email;
+            this.lock_phone = lock_phone;
+            this.blank_phone = blank_phone;
+            this.hide_phone = hide_phone;
+            this.lock_name = lock_name;
+            this.require_selfie_photo = require_selfie_photo;
+            this.selfie_validation_type = selfie_validation_type;
+            this.qualification = qualification;
+            this.external_id = external_id;
+            this.redirect_link = redirect_link;
+            this.sign_url = sign_url;
+            this.token = token;
+            this.status = status;
+            this.times_viewed = times_viewed;
+            this.last_view_at = last_view_at;
+            this.signed_at = signed_at;
+            this.geo_latitude = geo_latitude;
+            this.geo_longitude = geo_longitude;
+            this.signature_image = signature_image;
+            this.visto_image = visto_image;
+            this.document_photo_url = document_photo_url;
+            this.document_verse_photo_url = document_verse_photo_url;
+            this.selfie_photo_url = selfie_photo_url;
+            this.selfie_photo_url2 = selfie_photo_url2;
+            this.send_via = send_via;
+            this.require_document_photo = require_document_photo;
+        }
 
     public getName(): string {
         return this.name;

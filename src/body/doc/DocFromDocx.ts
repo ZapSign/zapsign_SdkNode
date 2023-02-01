@@ -1,12 +1,11 @@
-import { Signer } from "../signer/Signer";
 import { Doc } from "./Doc";
 
 export class DocFromDocx extends Doc {
     private url_docx: string;
 
-    constructor() {
-        super();
-            this.url_docx = ''
+    constructor(url_docx: string) {
+        super(false, '', '', false, false, '', '', '', '', '', new Date(), false, [], [], 0);
+            this.url_docx = url_docx;
     }
 
     public getUrl_docx(): string {
