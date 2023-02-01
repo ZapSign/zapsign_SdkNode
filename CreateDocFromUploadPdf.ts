@@ -10,7 +10,7 @@ export class GetDocs {
     
     getDocs() {
         try {
-            const docsResponse = new DocRequests();
+            const docsResponse = new DocRequests(this.apiToken);
             console.log('docs response', docsResponse);
             // docsResponse.setTokenApi(this.apiToken);
             // docsResponse.getDocs();
