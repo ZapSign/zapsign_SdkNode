@@ -33,7 +33,7 @@ export default class DocRequests {
 
         const uri: string = `${this.apiRoute}docs/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response } = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return this.jsonConverter.jsonToDocsResponse(response);
     }
@@ -42,7 +42,7 @@ export default class DocRequests {
     public async getDocs()  {
         const uri: string = `${this.apiRoute}docs/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().getRequest(uri);
+        const { response } = await new HttpRequestFactory().getRequest(uri);
 
         return this.jsonConverter.jsonToDocsResponse(response);
     }
@@ -53,7 +53,7 @@ export default class DocRequests {
 
         const uri: string = `${this.apiRoute}docs/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response } = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return this.jsonConverter.jsonToDocResponse(response);
     }
@@ -63,7 +63,7 @@ export default class DocRequests {
 
         const uri: string = `${this.apiRoute}docs/async/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response } = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return this.jsonConverter.jsonToDocAsyncResponse(response);
     }
@@ -73,7 +73,7 @@ export default class DocRequests {
 
         const uri: string = `${this.apiRoute}models/create-doc/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response } = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return this.jsonConverter.jsonToDocResponse(response);
     }
@@ -83,7 +83,7 @@ export default class DocRequests {
 
         const uri: string = `${this.apiRoute}models/create-doc/async/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response }= await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return this.jsonConverter.jsonToDocAsyncResponse(response);
     }
@@ -93,7 +93,7 @@ export default class DocRequests {
 
         const  uri: string = `${this.apiRoute}docs/${docToken}/upload-extra-doc/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response } = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return this.jsonConverter.jsonToExtraDocResponse(response);
     }
@@ -101,7 +101,7 @@ export default class DocRequests {
     public async detailDoc(docToken: string) {
         const uri: string = `${this.apiRoute}docs/${docToken}/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().getRequest(uri);
+        const { response } = await new HttpRequestFactory().getRequest(uri);
 
         return this.jsonConverter.jsonToDocResponse(response);
     }
@@ -109,7 +109,7 @@ export default class DocRequests {
     public async deleteDoc(docToken: string) {
         const uri: string = `${this.apiRoute}docs/${docToken}/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().deleteRequest(uri);
+        const { response } = await new HttpRequestFactory().deleteRequest(uri);
 
         return this.jsonConverter.jsonToDocResponse(response);
     }
@@ -119,7 +119,7 @@ export default class DocRequests {
 
         const uri: string = `${this.apiRoute}docs/${docToken}/place-signatures/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response } = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return response;
     }
