@@ -1,29 +1,11 @@
 export class Rubrica {
-    private page: number;
-    private relative_position_bottom: number;
-    private relative_position_left: number;
-    private relative_size_x: number;
-    private relative_size_y: number;
-    private type: string;
-    private signer_token: string;
-
-    constructor(
-        page: number,
-        relative_position_bottom: number,
-        relative_position_left: number,
-        relative_size_x: number,
-        relative_size_y: number,
-        type: string,
-        signer_token: string
-        ) {
-            this.page = page;
-            this.relative_position_bottom = relative_position_bottom;
-            this.relative_position_left = relative_position_left;
-            this.relative_size_x = relative_size_x;
-            this.relative_size_y = relative_size_y;
-            this.type = type;
-            this.signer_token = signer_token
-        }
+    private page: number = 0;
+    private relative_position_bottom: number = 0;
+    private relative_position_left: number = 0;
+    private relative_size_x: number = 0;
+    private relative_size_y: number = 0;
+    private type: string = "";
+    private signer_token: string = "";
 
     public getPage(): number {
         return this.page;
@@ -33,36 +15,36 @@ export class Rubrica {
         this.page = page;
     }
 
-    public getRelative_position_bottom(): number {
+    public getRelativePositionBottom(): number {
         return this.relative_position_bottom;
     }
 
-    public setRelative_position_bottom(relative_position_bottom: number): void {
-        this.relative_position_bottom = relative_position_bottom;
+    public setRelativePositionBottom(relativePositionBottom: number): void {
+        this.relative_position_bottom = relativePositionBottom;
     }
 
-    public getRelative_position_left(): number {
+    public getRelativePositionLeft(): number {
         return this.relative_position_left;
     }
 
-    public setRelative_position_left(relative_position_left: number): void {
+    public setRelativePositionLeft(relative_position_left: number): void {
         this.relative_position_left = relative_position_left;
     }
 
-    public getRelative_size_x(): number {
+    public getRelativeSizeX(): number {
         return this.relative_size_x;
     }
 
-    public setRelative_size_x(relative_size_x: number): void {
-        this.relative_size_x = relative_size_x;
+    public setRelativeSizeX(relativeSizeX: number): void {
+        this.relative_size_x = relativeSizeX;
     }
 
-    public getRelative_size_y(): number {
+    public getRelativeSizeY(): number {
         return this.relative_size_y;
     }
 
-    public setRelative_size_y(relative_size_y: number): void {
-        this.relative_size_y = relative_size_y;
+    public setRelativeSizeY(relativeSizeY: number): void {
+        this.relative_size_y = relativeSizeY;
     }
 
     public getType(): string {
@@ -73,11 +55,11 @@ export class Rubrica {
         this.type = type;
     }
 
-    public getSigner_token(): string {
+    public getSignerToken(): string {
         return this.signer_token;
     }
 
-    public setSigner_token(signer_token: string): void {
-        this.signer_token = signer_token;
+    public setSignerToken(signerToken: string): void {
+        this.signer_token = signerToken;
     }
 }

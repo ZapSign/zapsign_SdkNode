@@ -1,11 +1,6 @@
 export class DeParaTemplate {
-    private de: string;
-    private para: string;
-
-    constructor(de: string, para: string) {
-        this.de = de;
-        this.para = para
-    }
+    private de: string = "";
+    private para: string = "";
 
     public DeParaTemplateBuilder(de: string, para: string) {
         this.setDe(de);

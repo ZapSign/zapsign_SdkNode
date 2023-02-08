@@ -89,7 +89,6 @@ export class DocFromDocxBuilder {
         return this;
     }
 
-
     build() {
         return this.docFromDocx;
     }

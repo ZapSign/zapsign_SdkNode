@@ -1,4 +1,4 @@
-import { Signer } from "src/body/signer/Signer";
+import { Signer } from "../../../body/signer/Signer";
 import { DocFromPdf } from "../DocFromPdf";
 
 export class DocFromPdfBuilder {
@@ -7,7 +7,6 @@ export class DocFromPdfBuilder {
     constructor() {
         this.docFromPdf = new DocFromPdf();
     }
-
 
     withSandbox(sandbox: boolean){
         this.docFromPdf.setSandbox(sandbox);
@@ -88,7 +87,6 @@ export class DocFromPdfBuilder {
         this.docFromPdf.setUrlPdf(urlPdf);
         return this;
     }
-
 
     build() {
         return this.docFromPdf;
