@@ -11,10 +11,11 @@ export class HttpRequestFactory {
           const response = await this.request(options, function (error: any, response: any, body: any) {
                 return body;
             });
+            // const um = response.status
 
-            if (response.statusCode !== 200) {
-                throw new Error(`Error status ${response.statusCode} -- ${response.body}`);
-            } else return {'status': response.statusCode, 'response': response}
+            if (response.status !== 200) {
+                throw new Error(`Error status ${response.status} -- ${response.body}`);
+            } else return {'status': response.status, 'response': response}
     }    
 
     public async postRequest(url: string, body: string) {
@@ -31,9 +32,10 @@ export class HttpRequestFactory {
             return body;
         });
         
-        if (response.statusCode !== 200) {
-            throw new Error(`Error status ${response.statusCode} -- ${response.body}`);
-        } else return {'status': response.statusCode, 'response': response}
+        // if (response.statusCode !== '200') {
+        //     throw new Error(`Error status ${response.statusCode} -- ${response.body}`);
+        // } 
+        return {'status': response , 'response': response}
     }
 
     public async deleteRequest(url: string) {

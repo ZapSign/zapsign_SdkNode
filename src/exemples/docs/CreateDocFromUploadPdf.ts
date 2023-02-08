@@ -2,7 +2,7 @@ require('dotenv').config();
 import { Signer } from "../../body/signer/Signer";
 import DocRequests from "../../docs/DocRequests";
 import { JsonConverter } from "../../services/JsonConverter";
-import { DocFromPdf } from "../../body/doc/DocFromPdf";
+import { DocFromPdfBuilder } from "../../body/doc/builders/DocFromPdfBuilder";
 
 const apiToken: any = process.env.APITOKEN;
 
@@ -16,7 +16,13 @@ signers.push(signer1, signer2);
 
 const pdfUrl: any = process.env.PDF_URL;
 
-const docFromPdf = new DocFromPdf(true, 'My New Doc From Upload Pdf', 'pt-br', true, false, '', '', '', '', './', new Date(), false, [], signers, 0, pdfUrl)
+const docFromPdf = new DocFromPdfBuilder()
+    .withSandbox(true)
+    .withName('MyNewDoc')
+    .withLang('pt-br')
+    .withSigners(signers)
+    .withUrlPdf(pdfUrl)
+    .build();
 
 async function testeCreateDocFromUploadPdf() {
     try {

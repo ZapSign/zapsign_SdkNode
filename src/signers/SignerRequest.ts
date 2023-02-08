@@ -1,4 +1,4 @@
-import { SignBatch } from "src/body/signer/SignBatch";
+import { SignBatch } from "../body/signer/SignBatch";
 import { Signer } from "../body/signer/Signer";
 import { HttpRequestFactory } from "../services/HttpRequestFactory";
 import { JsonConverter } from "../services/JsonConverter";
@@ -23,7 +23,7 @@ export class SignerRequest {
     public async detailSigner(signerToken: string): Promise<Signer> {
         const uri: string = `${this.apiRoute}signers/${signerToken}/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().getRequest(uri);
+        const { response } = await new HttpRequestFactory().getRequest(uri);
 
         return this.jsonConverter.jsonToSigner(response);
     }
@@ -33,7 +33,7 @@ export class SignerRequest {
 
         const uri: string = `${this.apiRoute}signers/${signerToken}/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().postRequest(uri, jsonDoc);
+        const { response } = await new HttpRequestFactory().postRequest(uri, jsonDoc);
 
         return this.jsonConverter.jsonToSigner(response);
     }
@@ -43,15 +43,18 @@ export class SignerRequest {
 
         const uri: string = `${this.apiRoute}docs/${docToken}/add-signer/?api_token=${this.apiToken}`;
 
-        const response = await  new HttpRequestFactory().postRequest(uri, jsonDoc);
+
+        const { response, status } = await  new HttpRequestFactory().postRequest(uri, jsonDoc);
+        console.log('status', status)
 
         return this.jsonConverter.jsonToSigner(response);
+
     }
 
     public async deleteSigner(docToken: string): Promise<string> {
         const uri: string = `${this.apiRoute}signer/${docToken}/remove/?api_token=${this.apiToken}`;
 
-        const response = await new HttpRequestFactory().deleteRequest(uri);
+        const { response } = await new HttpRequestFactory().deleteRequest(uri);
 
         return response;
     }
@@ -63,6 +66,6 @@ export class SignerRequest {
 
         const response = new HttpRequestFactory().postRequest(uri, jsonDoc);
 
-        return response;
+        return (await response).response;
     }
 }
