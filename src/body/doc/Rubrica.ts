@@ -27,8 +27,8 @@ export class Rubrica {
         return this.relative_position_left;
     }
 
-    public setRelativePositionLeft(relative_position_left: number): void {
-        this.relative_position_left = relative_position_left;
+    public setRelativePositionLeft(relativePositionLeft: number): void {
+        this.relative_position_left = relativePositionLeft;
     }
 
     public getRelativeSizeX(): number {

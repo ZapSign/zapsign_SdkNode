@@ -1,9 +1,5 @@
 export class CreateBy {
-    private email: string;
-
-    constructor(email: string) {
-        this.email = email
-    }
+    private email: string = "";
 
     public getEmail(): string {
         return this.email;
