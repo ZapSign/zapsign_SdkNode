@@ -6,9 +6,9 @@ import { DocFromPdfBuilder } from "../../body/doc/builders/DocFromPdfBuilder";
 
 const apiToken: any = process.env.APITOKEN;
 
-const signer1 = new Signer('First Signer - Create Doc From Upload PDF', 'myFirstSigner@teste.com', 'assinaturaTela', false, false, 0, '', '11', '999999999', false, false, false, false, false, false, false, false, 'none', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '');
+const signer1 = new Signer();
 
-const signer2 = new Signer('Second Signer - Create Doc From Upload PDF', 'mySecondSigner@teste.com', 'assinaturaTela', false, false, 0, '', '11', '999999999', false, false, false, false, false, false, false, false, 'none', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '');
+const signer2 = new Signer();
 
 let signers: Signer[] = [];
 

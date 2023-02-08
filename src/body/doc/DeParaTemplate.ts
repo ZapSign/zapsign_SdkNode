@@ -2,11 +2,6 @@ export class DeParaTemplate {
     private de: string = "";
     private para: string = "";
 
-    public DeParaTemplateBuilder(de: string, para: string) {
-        this.setDe(de);
-        this.setPara(para)
-    }
-
     public getDe(): string {
         return this.de;
     }
