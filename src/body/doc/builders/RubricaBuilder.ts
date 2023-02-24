@@ -47,3 +47,5 @@ export class RubricaBuilder {
     }
 
 }
+
+module.exports = new RubricaBuilder

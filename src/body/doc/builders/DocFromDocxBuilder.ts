@@ -93,3 +93,5 @@ export class DocFromDocxBuilder {
         return this.docFromDocx;
     }
 }
+
+module.exports = new DocFromDocxBuilder

@@ -16,3 +16,5 @@ export class CreateByBuilder {
         return this.createBy;
     }
 }
+
+module.exports = new CreateByBuilder

@@ -181,3 +181,5 @@ export class SignerBuilder {
         return this.signer;
     }
 };
+
+module.exports = new SignerBuilder

@@ -15,3 +15,5 @@ export class SignBatchBuilder {
         this.withSignerTokens(signerTokens);
     }
 }
+
+module.exports = new SignBatchBuilder

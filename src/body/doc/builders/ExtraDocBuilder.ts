@@ -19,3 +19,5 @@ export class ExtraDocBuilder {
         return this.extraDoc;
     }
 }
+
+module.exports = new ExtraDocBuilder

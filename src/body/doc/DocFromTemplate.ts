@@ -6,6 +6,14 @@ export class DocFromTemplate extends Doc {
     private template_id: string = '';
     private data: DeParaTemplate[] = [new DeParaTemplate()];
 
+    public getSigner() {
+        throw new Error('You can not set signers in DocFromTemplate, try setSigner_name.')
+    }
+
+    public setSigner() {
+        throw new Error('You can not set signers in DocFromTemplate, try setSigner_name.')
+    }
+
     public getSignerName(): string {
         return this.signer_name;
     }

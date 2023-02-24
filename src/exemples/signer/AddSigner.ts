@@ -35,7 +35,7 @@ async function testeAddSigner() {
     try {
         const signerResponse = await new SignerRequest(apiToken).addSigner(docToken, signer);
         const jsonDocResponse = new JsonConverter().signerToJson(signerResponse);
-        console.log('oi', jsonDocResponse);
+        console.log(jsonDocResponse);
     } catch (err) {
         console.log('err', err);
     }

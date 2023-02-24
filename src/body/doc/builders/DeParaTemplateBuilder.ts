@@ -16,4 +16,10 @@ export class DeParaTemplateBuilder {
         this.deParaTemplate.setPara(para);
         return this;
     }
+
+    build() {
+        return this.deParaTemplate;
+    }
 }
+
+module.exports = new DeParaTemplate

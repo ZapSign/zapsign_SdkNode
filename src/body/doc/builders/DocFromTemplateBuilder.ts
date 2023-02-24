@@ -100,3 +100,5 @@ export class DocFromTemplateBuilder {
         return this.docFromTemplate;
     }
 };
+
+module.exports = new DocFromTemplateBuilder

@@ -92,3 +92,5 @@ export class DocFromPdfBuilder {
         return this.docFromPdf;
     }
 };
+
+module.exports = new DocFromPdfBuilder
