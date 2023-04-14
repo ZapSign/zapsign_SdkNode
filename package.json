@@ -1,6 +1,6 @@
 {
   "name": "sdk-node-typescript-zapsign",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SDK-NODE-TYPESCRIPT-ZAPSIGN",
   "main": "index.js",
   "scripts": {
