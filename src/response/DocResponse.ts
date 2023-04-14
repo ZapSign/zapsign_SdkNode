@@ -17,7 +17,7 @@ export class DocResponse extends Doc {
     private deleted_at: string = '';
     private created_at: string = '';
     private last_update_at: string = '';
-    private created_by: CreateBy = new CreateBy('');
+    private created_by: CreateBy = new CreateBy();
     private template: Template = new Template('');
     private answers: Answers[] = [new Answers('', '')];
     private auto_reminder: number = 0;
@@ -39,7 +39,7 @@ export class DocResponse extends Doc {
         answers: Answers[],
         auto_reminder: number 
         ) {
-        super(false, '', '', false, false, '', '', '', '', '', new Date(), false, [], [], 0);
+        super();
         this.open_id = open_id;
         this.token = token;
         this.status = status;

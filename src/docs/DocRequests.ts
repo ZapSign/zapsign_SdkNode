@@ -1,7 +1,7 @@
-import { DocFromDocx } from "src/body/doc/DocFromDocx";
-import { DocFromTemplate } from "src/body/doc/DocFromTemplate";
-import { ExtraDoc } from "src/body/doc/ExtraDoc";
-import { RubricasArray } from "src/body/doc/RubricasArray";
+import { DocFromDocx } from "../body/doc/DocFromDocx";
+import { DocFromTemplate } from "../body/doc/DocFromTemplate";
+import { ExtraDoc } from "../body/doc/ExtraDoc";
+import { RubricasArray } from "../body/doc/RubricasArray";
 import { DocFromPdf } from "../body/doc/DocFromPdf";
 import { HttpRequestFactory } from "../services/HttpRequestFactory";
 import { JsonConverter } from "../services/JsonConverter";

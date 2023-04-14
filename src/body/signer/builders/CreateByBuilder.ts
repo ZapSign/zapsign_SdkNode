@@ -1,4 +1,4 @@
-import { CreateBy } from "src/body/CreateBy";
+import { CreateBy } from "../../../body/CreateBy";
 
 export class CreateByBuilder {
     createBy: CreateBy;
