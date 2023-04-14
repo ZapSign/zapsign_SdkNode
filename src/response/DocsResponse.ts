@@ -1,6 +1,6 @@
-import { Answers } from "src/body/Answers";
-import { CreateBy } from "src/body/CreateBy";
-import { Template } from "src/body/Template";
+import { Answers } from "../body/Answers";
+import { CreateBy } from "../body/CreateBy";
+import { Template } from "../body/Template";
 import { DocResponse } from "./DocResponse";
 import { ExtraDocResponse } from "./ExtraDocResponse";
 
@@ -15,7 +15,7 @@ export class DocsResponse {
         this.count = 0;
         this.next = '';
         this.previous = '';
-        this.results = [new DocResponse(0, '', '', '', '', '', [new ExtraDocResponse('', '', '', '', '')], false, '', '', '', new CreateBy(''), new Template(''), [new Answers('', '')], 0)]
+        this.results = [new DocResponse(0, '', '', '', '', '', [new ExtraDocResponse('', '', '', '', '')], false, '', '', '', new CreateBy(), new Template(''), [new Answers('', '')], 0)]
     }
 
     public getCount(): number {
