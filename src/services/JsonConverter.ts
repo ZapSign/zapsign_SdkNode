@@ -7,7 +7,7 @@ import { DocFromDocx } from '../body/doc/DocFromDocx';
 import { DocFromTemplate } from '../body/doc/DocFromTemplate';
 import { ExtraDoc } from '../body/doc/ExtraDoc';
 import { Signer } from '../body/signer/Signer';
-import { RubricasArray } from 'src/body/doc/RubricasArray';
+import { RubricasArray } from '../body/doc/RubricasArray';
 import { SignBatch } from '../body/signer/SignBatch';
 
  export class JsonConverter {        
